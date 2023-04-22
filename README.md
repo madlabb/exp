@@ -1,11 +1,5 @@
-# exp
+# Flutter Netflix UI Redesign
 
-COMMANDS TO ADD FOLDER
+[YouTube Speed Code](https://youtu.be/sgfMdhV4HQI)
 
-git checkout -b projectTitle
-
-git add .
-
-git commit -m "message"
-
-git push origin projectTitle
+[Design Credit](https://dribbble.com/shots/5026483-Netflix-Mobile-App-Redesign/)
