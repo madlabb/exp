@@ -1,16 +1,13 @@
-# avahanapp
+For Firestore connection 
 
-A new Flutter project.
+1. Setup your Cloud Firestore 
+2. Remove the google-service.json file from the app folder inside android folder
+3. Add your google-service.json file in the same folder you will get during setup 
+4. Remove the 3rd classpath in the build.gradle file inside android folder and add your classpath 
+5. Remove Plugin at the end from build.gradle file inside app folder and add your Plugin "you will get at the setup"
+6. check the following dependencies in the pubspec.yaml file 
+cloud_firestore: ^4.5.1
+firebase_database: ^10.1.0
+firebase_core: ^2.9.0
+7. If not there install it 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
