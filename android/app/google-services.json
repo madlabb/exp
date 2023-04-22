@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "574264868007",
+    "project_id": "himadri-ef863",
+    "storage_bucket": "himadri-ef863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574264868007:android:32200e999295ddb8836f82",
+        "android_client_info": {
+          "package_name": "com.example.avahanapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574264868007-gkmbd4447lccivm9jj8d81ji72uj225v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs_LnFhVIjCMDuAVrVywzocl4sSj0FCX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574264868007-gkmbd4447lccivm9jj8d81ji72uj225v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
