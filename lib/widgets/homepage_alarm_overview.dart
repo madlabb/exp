@@ -1,6 +1,4 @@
-// *********************************
 // This is the homepage
-// *********************************
 
 import 'package:flutter/material.dart'; //Google Material Design assets
 import 'package:intl/intl.dart';

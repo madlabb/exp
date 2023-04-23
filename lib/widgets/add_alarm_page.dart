@@ -1,7 +1,3 @@
-// *********************************
-// This is the second page for adding the alarm
-// *********************************
-
 import 'package:flutter/material.dart'; //Google Material Design assets
 import 'package:intl/intl.dart';
 import 'dart:developer' as dev;
@@ -24,8 +20,7 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
   bool _challengingModeActive = false;
   bool _recurrentMode = false;
 
-  // Create a text controller and use it to retrieve the current value
-  // of the Alarm TextField.
+
   final _alarmNameController = TextEditingController(text: 'My personal alarm');
 
   @override
@@ -34,7 +29,6 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
     super.dispose();
   }
 
-  /// function to save the created/edited alarm
   List<CustomAlarm?> _saveAlarm(List<CustomAlarm?> currentAlarmList) {
     List<CustomAlarm?> alarmList = currentAlarmList;
     CustomAlarm? newCreatedAlarm = CustomAlarm(
@@ -54,7 +48,6 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
     return alarmList;
   }
 
-  /// Time selector
   void _selectTime() async {
     final TimeOfDay? newTime = await showTimePicker(
       context: context,
@@ -74,7 +67,6 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
     }
   }
 
-  /// Date selector
   void _selectDate() async {
     final DateTime? newDate = await showDatePicker(
       context: context,
@@ -99,7 +91,6 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
     }
   }
 
-  // That's needed for the input of the alarm name
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -271,7 +262,7 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
               ],
             ),
 
-            // Type of alarm
+            // NAme of alarm
             Row(
               children: <Widget>[
                 Expanded(
@@ -304,39 +295,7 @@ class _MyAddAlarmPageState extends State<AddAlarmPage> {
                 SizedBox(height: 10),
               ],
             ),
-            Row(
-              // Toggle/Switch for Challenge Mode
-              children: <Widget>[
-                Expanded(
-                  flex: 8,
-                  child: Text(
-                    'Challenge mode',
-                    style: TextStyle(
-                        color: (_challengingModeActive == true)
-                            ? Colors.black
-                            : Colors.black38),
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Switch(
-                    value: _challengingModeActive,
-                    activeColor: Color(0xFF6200EE),
-                    onChanged: (bool value) {
-                      setState(() {
-                        _challengingModeActive = value;
-                      });
-                    },
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              // Add some space
-              children: <Widget>[
-                SizedBox(height: 50),
-              ],
-            ),
+            
             Row(
               // Cancel and confirm buttons
               children: <Widget>[

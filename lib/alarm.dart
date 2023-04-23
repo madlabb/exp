@@ -37,14 +37,7 @@ class CustomAlarm {
       weekdayRecurrence = weekdayRecurrence ?? List.filled(7, false) // = [false, ..., false]; Attention: [0] is Sunday, [1] is Monday etc.
   ;
 
-  // Information
-  // isRecurrent and alarmDate are exclusive, so only one value is used
-  // and the user could be null; however, I won't use null, since whene editing
-  // the alarm it can be toggled; in this way the old information can be stored
-
-  // JSON format is needed to save/load the data (shared preferences doesn't support classes as datatype)
-
-  // (1) Object to JSON
+  
   Map<String, dynamic> toJson() => {
     "isActive": isActive,
     "isRinging": isRinging,
@@ -72,13 +65,12 @@ class CustomAlarm {
   }
 }
 
-// list including all the saved alarms
+
 List<CustomAlarm?> listOfSavedAlarms = [];
 
-/// Init app function
-/// This is called only for the first start of the app or when the app is resetted via settings
+
 List<CustomAlarm?> initAlarms(){
-  // Data structure / list for a collection of saved alarms
+  
   List<CustomAlarm?> savedAlarmList = [];
 
   // create one default alarm with some settings
@@ -112,7 +104,7 @@ List<CustomAlarm?> initAlarms(){
   return savedAlarmList;
 }
 
-/// Convert weekday number to custom weekday string
+
 String weekdayNumberToString(int number)
 {
   String output = 'None';
@@ -128,10 +120,7 @@ String weekdayNumberToString(int number)
   return output;
 }
 
-/// Weekday conversion function
-/// I need this function because
-/// WeekdaySelector starts Sunday (0) to Saturday (6)
-/// while DayTime.now().weekday goes from Monday (1) to Sunday (7)
+
 int dateTimeRemapper(int input){
   int output = 0;
   switch(input){
@@ -147,8 +136,7 @@ int dateTimeRemapper(int input){
 }
 
 
-/// Converts a bool list of weekdays to a string
-/// that will be displayed in the UI
+
 String weekdayBoolListToString(List<bool> weekdays)
 {
   String output = "";
@@ -160,11 +148,11 @@ String weekdayBoolListToString(List<bool> weekdays)
       {
         if (output == "")
           {
-            output = output + weekdayNumberToString(weekdayCounter); //the first entry without comma
+            output = output + weekdayNumberToString(weekdayCounter);
           }
         else
           {
-            output = output + ", "+ weekdayNumberToString(weekdayCounter); //the other entries with a comma
+            output = output + ", "+ weekdayNumberToString(weekdayCounter); 
           }
       }
   }
@@ -172,7 +160,7 @@ String weekdayBoolListToString(List<bool> weekdays)
 }
 
 
-/// Conversion of 12h AM/PM format to 24h format with TimeOfDay
+
 extension TimeOfDayConverter on TimeOfDay {
   String to24hours() {
     final hour = this.hour.toString().padLeft(2, "0");
@@ -188,9 +176,9 @@ void playAlarmSound(double volume)
   FlutterRingtonePlayer.play(
     android: AndroidSounds.notification,
     ios: IosSounds.glass,
-    looping: true, // Android only - API >= 28
-    volume: volume, // Android only - API >= 28
-    asAlarm: true, // Android only - all APIs
+    looping: true, 
+    volume: volume, 
+    asAlarm: true, 
   );
 }
 
@@ -225,15 +213,7 @@ List<CustomAlarm?> deactivateAlarm(
 
 
 
-/// Backuping the alarm list listOfSavedAlarms
-/// Do it:
-/// (1) after an alarm is created
-/// (2) after an alarm is deleted
-/// (3) after an alarm is edited (not available at this time)
-/// (4) after characterists of an alarm change:
-///   (4.1) isRinging (when is alarm is going off and when it's deactived)
-///   (4.2) isActive (when the toggle is used)
-/// (5) regularly via a timer
+
 Future<void> saveData() async {
   dev.log("Saving alarm data...", name: 'Alarm');
   final prefs = await SharedPreferences.getInstance();
@@ -242,9 +222,6 @@ Future<void> saveData() async {
 }
 
 
-/// Function including the reactions when an alarm goes off
-/// We only go to the alarm ringing page if we are not there (otherwise it will be reloaded like every second);
-//  That's why we call the function only in the states (routes) for the alarm overview and the alarm adding;
 void alarmReaction(CustomAlarm? triggeredAlarm, index, context, typeOfAlarm){
   dev.log("$typeOfAlarm alarm is going off!", name: 'Alarm');
   playAlarmSound(0.5); // play alarm
