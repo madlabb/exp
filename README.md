@@ -35,6 +35,6 @@ run main.dart
 # About 
 
 There are 2 files Good UI and Simple UI
-You can select any one 
+You can select any one then copy their files in lib after creating flutter project and replace pubspec file
 Simple UI is simple to understand and one page implementation
 Good UI is bit complex and can be difficult to understand the code
