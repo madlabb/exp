@@ -4,6 +4,8 @@ COMMANDS TO ADD FOLDER
 
 git init
 
+(if already have added origin) git remote remove origin
+
 git remote add origin https://github.com/madlabb/exp.git
 
 git checkout -b projectTitle
