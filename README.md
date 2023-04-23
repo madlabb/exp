@@ -17,13 +17,13 @@ git commit -m "message"
 git push origin projectTitle
 
 
-Commands to run file
+# Commands to run file
 
 git clone https://github.com/madlabb/exp.git
 
 git checkout -b projectTitle
 
-#Open in VS Code
+## Open in VS Code
 
 open terminal 
 
