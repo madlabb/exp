@@ -23,7 +23,7 @@ git clone https://github.com/madlabb/exp.git
 
 git checkout -b projectTitle
 
-## Open in VS Code
+## Open in Android Studio
 
 open terminal 
 
