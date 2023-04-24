@@ -1,32 +1,12 @@
-# exp
+----------------------------------
+Food Delivery App using Flutter
+----------------------------------
 
-COMMANDS TO ADD FOLDER
+Creating a simple food delivery app for Flutter Sem Mini Project.
 
-git init
-
-(if already have added origin) git remote remove origin
-
-git remote add origin https://github.com/madlabb/exp.git
-
-git checkout -b projectTitle
-
-git add .
-
-git commit -m "message"
-
-git push origin projectTitle
-
-
-# Commands to run file
-
-git clone https://github.com/madlabb/exp.git
-
-git checkout -b projectTitle
-
-## Open in Android Studio
-
-open terminal 
-
-flutter pub get
-
-run main.dart
+----------------------------------
+Group Members: 
+34. Rushikesh Parab
+35. Shreya Ajit Parchurkar
+36. Tanmay Ashwin Arsania
+----------------------------------
